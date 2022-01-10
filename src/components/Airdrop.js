@@ -6,7 +6,7 @@ export function Airdrop({ claimAirdrop, claimAmount }) {
     <>
       <div style={{
         textAlign: "center",
-        padding: "100px 0px"
+        padding: "50px 0px"
       }}>
         <TunedLogo height={"200px"} />
       </div>
