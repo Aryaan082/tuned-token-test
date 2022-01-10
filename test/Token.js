@@ -258,8 +258,8 @@ describe("Token contract", function () {
 
 describe("Airdrop contract", function () {
   const rawdata = fs.readFileSync("allocation_merkle_output.json");
-  const merkleTree = JSON.parse(rawdata);
-  const merkleRoot = merkleTree.merkleRoot;
+  const claimData = JSON.parse(rawdata);
+  const merkleRoot = claimData.merkleRoot;
   let addr1MerkleTree;
   let addr2MerkleTree;
   let airdrop;
@@ -277,11 +277,11 @@ describe("Airdrop contract", function () {
     airdrop = await MerkleDistributor.deploy(tunedToken.address, merkleRoot);
 
     // Access the addr1 and addr2 key of the allocation map
-    addr1MerkleTree = merkleTree.claims[addr1.address];
-    addr2MerkleTree = merkleTree.claims[addr2.address];
+    addr1MerkleTree = claimData.claims[addr1.address];
+    addr2MerkleTree = claimData.claims[addr2.address];
 
     // Transfer tokens to token contract for users to claim
-    await tunedToken.connect(owner).transfer(airdrop.address, merkleTree.tokenTotal);
+    await tunedToken.connect(owner).transfer(airdrop.address, claimData.tokenTotal);
   });
 
   it("Check airdrop claims", async function () {

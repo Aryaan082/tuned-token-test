@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const commander_1 = require("commander");
 const fs_1 = __importDefault(require("fs"));
-const parse_balance_map_1 = require("../src/parse-balance-map");
+const parse_balance_map_1 = require("../merkle-components/parse-balance-map");
 commander_1.program
     .version('0.0.0')
     .requiredOption('-i, --input <path>', 'input JSON file location containing a map of account addresses to string balances');
