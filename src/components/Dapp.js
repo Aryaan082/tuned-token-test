@@ -13,7 +13,6 @@ import { Loading } from "./Loading";
 import { Transfer } from "./Transfer";
 import { TransactionErrorMessage } from "./TransactionErrorMessage";
 import { WaitingForTransactionMessage } from "./WaitingForTransactionMessage";
-import { NoTokensMessage } from "./Airdrop";
 
 // Get token ABI and address to interact with ethers
 const TokenABI = [
@@ -794,7 +793,7 @@ const AirdropABI = [
 		"type": "function"
 	}
 ];
-const airdropAddress = "0x0544C671788AC57D2aef5785Dbefe45798901C67";
+const airdropAddress = "0x9d3Bb834265e4138176d5b28d41Ca7a079BaeaeB";
 
 // This is the Hardhat Network id, you might change it in the hardhat.config.js
 // Here's a list of network ids https://docs.metamask.io/guide/ethereum-provider.html#properties
