@@ -793,7 +793,7 @@ const AirdropABI = [
 		"type": "function"
 	}
 ];
-const airdropAddress = "0x9d3Bb834265e4138176d5b28d41Ca7a079BaeaeB";
+const airdropAddress = "0xA4Ef80fe2692F21A83751002ccc24E46C74Bf2dd";
 
 // This is the Hardhat Network id, you might change it in the hardhat.config.js
 // Here's a list of network ids https://docs.metamask.io/guide/ethereum-provider.html#properties
