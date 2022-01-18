@@ -793,7 +793,7 @@ const AirdropABI = [
 		"type": "function"
 	}
 ];
-const airdropAddress = "0x2D5ED857aeFFE80c0140c78872c69951846C7cc4";
+const airdropAddress = "0xa4e33060fdC045Fa299D0e45a3b0d55C41fF08f7";
 
 // This is the Hardhat Network id, you might change it in the hardhat.config.js
 // Here's a list of network ids https://docs.metamask.io/guide/ethereum-provider.html#properties
@@ -1055,7 +1055,9 @@ export class Dapp extends React.Component {
     const userClaimData = airdropAllocation.claims[userAddress];
 
     const claimStatus = await this._airdrop.isClaimed(userClaimData.index);
-    const claimAmount = ethers.utils.formatUnits(parseInt(userClaimData.amount, 16).toString(), 18);
+    const claimAmount = ethers.utils.formatUnits(Number(parseInt(userClaimData.amount, 16).toString()).toLocaleString('fullwide', {useGrouping:false}));
+
+	console.log(claimAmount);
     
     if (claimStatus) {
       this.setState({
