@@ -17,7 +17,8 @@ export function Transfer({ transferTokens, claimAirdrop, claimAmount, tokenSymbo
           const amount = (parseInt(formData.get("amount")) * 10 ** 18).toString();
 
           if (to && amount) {
-            transferTokens(to, amount);
+            // Formatting amount since BigNumbers can't be sent to metamask for transactions
+            transferTokens(to, Number(amount).toLocaleString('fullwide', {useGrouping:false}));
           }
         }}
       >
